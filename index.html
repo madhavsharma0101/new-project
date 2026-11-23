@@ -846,6 +846,137 @@
         document.getElementById('course').value = current;
       });
     })();
-  </script>
+    </script>
+
+
+<style>
+/* 3D Computer Animation */
+.pc-scene {
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: radial-gradient(circle, #123b61, #050b18 75%);
+    perspective: 1000px;
+    padding: 40px 15px;
+}
+
+.pc-model {
+    width: 280px;
+    height: 220px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: pcFloat 4s ease-in-out infinite;
+}
+
+.pc-screen {
+    width: 100%;
+    height: 175px;
+    border: 7px solid #7bdcff;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #102d55, #020916);
+    box-shadow: 0 0 20px #00aeff,
+                inset 0 0 25px #087bc4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #00eaff;
+    font-size: 23px;
+    font-weight: bold;
+    text-shadow: 0 0 15px #00cfff;
+    animation: screenGlow 2s infinite alternate;
+}
+
+.pc-stand {
+    width: 55px;
+    height: 45px;
+    margin: auto;
+    background: linear-gradient(90deg, #526a82, #d8edff, #526a82);
+}
+
+.pc-base {
+    width: 130px;
+    height: 12px;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(#e4f5ff, #526a82);
+    box-shadow: 0 5px 20px #00aaff;
+}
+
+.pc-heading {
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 26px;
+}
+
+.pc-subtitle {
+    color: #9edcff;
+    text-align: center;
+    margin-top: 10px;
+}
+
+@keyframes pcFloat {
+    0%, 100% {
+        transform: rotateY(-18deg) rotateX(5deg) translateY(0);
+    }
+    50% {
+        transform: rotateY(18deg) rotateX(-5deg) translateY(-18px);
+    }
+}
+
+@keyframes screenGlow {
+    from {
+        box-shadow: 0 0 15px #00aaff;
+    }
+    to {
+        box-shadow: 0 0 35px #00eaff;
+    }
+}
+
+@media(max-width: 500px) {
+    .pc-model {
+        transform: scale(.85);
+    }
+
+    .pc-heading {
+        font-size: 21px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    .pc-model,
+    .pc-screen {
+        animation: none;
+    }
+}
+</style>
+
+<section class="pc-scene">
+    <div class="pc-model">
+
+        <div class="pc-screen">
+            RAJENDRE<br>
+            COMPUTER CENTRE
+        </div>
+
+        <div class="pc-stand"></div>
+
+        <div class="pc-base"></div>
+
+    </div>
+
+    <h2 class="pc-heading">
+        Learn Computer Skills
+    </h2>
+
+    <p class="pc-subtitle">
+        Build Your Digital Future With Us
+    </p>
+</section>
+
 </body>
 </html>
